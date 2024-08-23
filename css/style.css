@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+* ul {
+    list-style: none;
+    text-decoration: none;
+}
+* button {
+    cursor: pointer;
+}
+body {
+    /* background-color: #131a22; */
+    background-image: url(../photo/W01.png);
+    background-size: cover;
+    position: relative;
+}
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+/* Start Navbar */
+
+.nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+
+}
+
+.nav .container .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+.nav .container .navbar .logo {
+    width: 100px;
+}
+.nav .container .navbar .logo img {
+    width: 100%;
+}
+.nav .container .navbar .list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav .container .navbar .list ul li {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 15px ;
+    cursor: pointer;
+    position: relative;
+}
+.nav .container .navbar .list ul li::before{
+    position: absolute;
+    content: "";
+    bottom: -6px;
+    width: 0%;
+    height: 4px;
+    background-color: #eee;
+    transition: all 0.5s;
+}
+.nav .container .navbar .list ul li:hover::before{
+    width: 100%;
+}
+.nav .container .navbar .icon {
+    display: none;
+}
+.nav .container .navbar .icon i {
+    font-size: 30px;
+    color: #fff;
+}
+.toggle_menu {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    background-color: #fff;
+    transition: all 1s;
+}
+.toggle_menu ul {
+    padding: 10px;
+}
+.toggle_menu ul li {
+    position: relative;
+    padding: 20px;
+}
+.toggle_menu ul li::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background-color: #eee;
+    opacity: 0.7;
+    transition: all 1s;
+}
+.toggle_menu ul li:hover::before {
+    width: 100%;
+}
+.toggle{
+    transform: translateY(-450px);
+}
+.none{
+    display: none;
+}
+/* Start Section Home */
+#home  {
+    height: 100vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#home .box .text {
+    color: #fff;
+    width: 50%;
+}
+#home .box .text .text-main {
+    margin-bottom: 60px;
+}
+#home .box .text .text-main h2{
+    word-spacing: 10px;
+    letter-spacing: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+#home .box .text .text-main h1{
+    font-size: 80px;
+    width: 300px;
+    font-weight: bold;
+    color: #fff6d2;
+    line-height: 0.9;
+    padding: 10px 0 10px;
+    font-style: italic;
+}
+#home .box .text .text-main span {
+    letter-spacing: 10px;
+}
+#home .box .text .text-second {
+    padding: 60px 0 ;
+}
+#home .box .text .text-second p{
+    color: #ffffffa2;
+    position: relative;
+
+}
+#home .box .text .btn {
+    background-color: #fff6d2;
+    width: fit-content;
+    padding: 5px 10px 5px 20px;
+    border-radius: 25px;
+}
+#home .box .text .btn button {
+    border: none;
+    background-color: #131a22;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px 5px 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 18px;
+    position: relative;
+    width: 180px;
+    text-align: start;
+}
+#home .box .text .btn button::before {
+    position: absolute;
+    left: 100px;
+    content: "";
+    animation: now 2s infinite;
+}
+#home .box .text .text-second p::before{
+    position: absolute;
+    content: "";
+    top: -15px;
+    left: 0;
+    width: 170px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #fff6d2;
+}
+#home .box .image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+#home .box .image .photo {
+    width:500px;
+}
+#home .box .image img{
+    width: 100%;
+}
+
+
+/* Start Media Query */
+@media (max-width: 768px){
+    .nav {
+        position: relative;
+        background-color: #131a22;
+        z-index: 99999999;
+    }
+    .nav .container .navbar .list {
+        display: none;
+    }
+    .nav .container .navbar .icon {
+        display: block;
+    }
+    #home .box {
+        flex-direction: column-reverse;
+    }
+    #home .box .image {
+        width: 100%;
+    }
+    #home .box .text {
+        width: 100%;
+    }
+    #home .box .text .text-main h1{
+        font-size: 50px;
+    }
+    #home .box .text .text-second {
+        padding: 0;
+    }
+    #home .box .text .btn {
+        margin: 40px 0;
+    }
+
+}
+
+
+/* Keyframe */
+
+@keyframes now {
+    0%{
+        content: "|";
+    }
+    20%{
+        content: "N|";
+    }
+    40%{
+        content: "NO|";
+    }
+    60%{
+        content: "NOW|";
+    }
+    80%{
+        content: "NO|";
+    }
+    90%{
+        content: "N|";
+    }
+    100%{
+        content: "|";
+    }
+}
